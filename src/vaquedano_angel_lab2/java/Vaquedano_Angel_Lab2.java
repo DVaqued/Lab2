@@ -26,13 +26,41 @@ public class Vaquedano_Angel_Lab2{
         System.out.println("Ingrese 1 si quiere ir al ejercicio CADENA");
         System.out.println("Ingrese 2 si quiere ir al ejercicio NOTAS");
         System.out.println("Ingrese 3 si quiere ir al ejercicio CLASES");
+        System.out.println("Ingrese 4 si quiere salir.");
         
         System.out.println("Favor ingrese el número del ejercicio que desea realizar: ");
         ejer=lea.nextInt();
         
         
-        
         if (ejer==1){
+        System.out.println("Favor ingrese la linea de caracteres: ");
+        String linea=lea.next().toLowerCase();
+
+        int cantidadveces=0;
+        char letrarepetida=' ';
+
+        int cont=0;
+        while (cont<linea.length()) {
+            char caracterActual=linea.charAt(cont);
+            int frecuenciaActual=0;
+
+            int contador=0;
+            while (contador<linea.length()) {
+                if (linea.charAt(contador)==caracterActual) {
+                    frecuenciaActual++;
+                }
+                contador++;
+            }
+
+            if (frecuenciaActual>cantidadveces) {
+                cantidadveces=frecuenciaActual;
+                letrarepetida=caracterActual;
+            }
+            cont++;
+        }
+
+        System.out.println("El caracter que mas se repite es "+letrarepetida+
+                "\n y el número de veces que se repite es "+cantidadveces);
         
     }
         
@@ -80,6 +108,11 @@ public class Vaquedano_Angel_Lab2{
         else if(ejer==3){
             
         }
+         else if(ejer==4){
+                break;
         }
+      
+                }
+        
     }
 }
